@@ -97,7 +97,7 @@ m_file <- study.assay.df[["Metabolite.Assignment.File"]]
 m_file <- m_file[ ! duplicated(m_file)]
 if (length(m_file) != 1)
 	stop(paste("Zero, or More than one metabolite assignement file found in assay \"", study.assay.filename, "\": ", paste(m_file, collapse = ", "), ".", sep = ''))
-m.df <- read.table(file = file.path(opt$input, m_file), sep = "\t", header = TRUE, check.names = FALSE)
+m.df <- read.table(file = file.path(opt$input, m_file), sep = "\t", header = TRUE, check.names = FALSE, comment.char = "")
 
 # Get sample names for matching with m.df columns
 sample.field.names <- c('Sample.Name', 'Extract.Name')
